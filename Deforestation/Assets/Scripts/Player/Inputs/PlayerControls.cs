@@ -53,6 +53,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pickup"",
+                    ""type"": ""Button"",
+                    ""id"": ""0c2b8020-1c93-47ad-a799-463f75f4d804"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -132,6 +141,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""MoveForwardBackward"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f5e0722b-a7c3-4f20-a525-db5ff155b791"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pickup"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -149,6 +169,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Main_Jump = m_Main.FindAction("Jump", throwIfNotFound: true);
         m_Main_MoveLeftRight = m_Main.FindAction("MoveLeftRight", throwIfNotFound: true);
         m_Main_MoveForwardBackward = m_Main.FindAction("MoveForwardBackward", throwIfNotFound: true);
+        m_Main_Pickup = m_Main.FindAction("Pickup", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -211,6 +232,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Main_Jump;
     private readonly InputAction m_Main_MoveLeftRight;
     private readonly InputAction m_Main_MoveForwardBackward;
+    private readonly InputAction m_Main_Pickup;
     public struct MainActions
     {
         private @PlayerControls m_Wrapper;
@@ -218,6 +240,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Main_Jump;
         public InputAction @MoveLeftRight => m_Wrapper.m_Main_MoveLeftRight;
         public InputAction @MoveForwardBackward => m_Wrapper.m_Main_MoveForwardBackward;
+        public InputAction @Pickup => m_Wrapper.m_Main_Pickup;
         public InputActionMap Get() { return m_Wrapper.m_Main; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -236,6 +259,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @MoveForwardBackward.started -= m_Wrapper.m_MainActionsCallbackInterface.OnMoveForwardBackward;
                 @MoveForwardBackward.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnMoveForwardBackward;
                 @MoveForwardBackward.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnMoveForwardBackward;
+                @Pickup.started -= m_Wrapper.m_MainActionsCallbackInterface.OnPickup;
+                @Pickup.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnPickup;
+                @Pickup.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnPickup;
             }
             m_Wrapper.m_MainActionsCallbackInterface = instance;
             if (instance != null)
@@ -249,6 +275,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @MoveForwardBackward.started += instance.OnMoveForwardBackward;
                 @MoveForwardBackward.performed += instance.OnMoveForwardBackward;
                 @MoveForwardBackward.canceled += instance.OnMoveForwardBackward;
+                @Pickup.started += instance.OnPickup;
+                @Pickup.performed += instance.OnPickup;
+                @Pickup.canceled += instance.OnPickup;
             }
         }
     }
@@ -267,5 +296,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnMoveLeftRight(InputAction.CallbackContext context);
         void OnMoveForwardBackward(InputAction.CallbackContext context);
+        void OnPickup(InputAction.CallbackContext context);
     }
 }
