@@ -16,3 +16,4 @@ MonoBehaviour:
   Name: Test
   Icon: {fileID: 21300000, guid: d24e7e0b75e1a244bb9687d6fd4315ef, type: 3}
   MaxAmount: 2
+  CanSplited: 1

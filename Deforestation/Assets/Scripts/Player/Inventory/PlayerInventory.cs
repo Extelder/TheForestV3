@@ -4,77 +4,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Canvas))]
-public class PlayerInventory : MonoBehaviour
+public class PlayerInventory : SlotsContainer
 {
-    [SerializeField] private PlayerCursor _playerCursor;
-    [SerializeField] private Item _defaultItem;
+    private PlayerControls _controls;
 
-    private Canvas _canvas;
-    private bool _opened;
-
-    [field: SerializeField] public InventorySlot[] InventorySlots { get; private set; }
-
-    private void Awake()
+    public static SelectedSlot SelectedSlot { get; set; }
+    
+    private void OnEnable()
     {
-        _canvas = GetComponent<Canvas>();
-        _opened = _canvas.enabled;
-
-        for (int i = 0; i < InventorySlots.Length; i++)
-        {
-            InventorySlots[i].NumberInOrder = i;
-            InventorySlots[i].CurrentItem = _defaultItem;
-        }
-
-        Open();
+        _controls = new PlayerControls();
+        _controls.Enable();
+        _controls.Main.InventoryOpenClose.performed += context => TryInventoryOpenClose();
     }
 
-    public void Open()
+    private void OnDisable()
     {
-        _opened = true;
-        _canvas.enabled = true;
-        _playerCursor.Enable();
+        _controls.Disable();
     }
 
-    public void Close()
+    private void TryInventoryOpenClose()
     {
-        _opened = false;
-        _canvas.enabled = false;
-        _playerCursor.Disable();
-    }
-
-    public void AddItem(PickupItem item)
-    {
-        foreach (InventorySlot inventorySlot in InventorySlots)
-        {
-            if (inventorySlot.CurrentItem == item.CurrentItem)
-            {
-                if ((inventorySlot.Amount + item.Amount) > inventorySlot.CurrentItem.MaxAmount)
-                {
-                    int delta = inventorySlot.CurrentItem.MaxAmount - inventorySlot.Amount;
-                    inventorySlot.Amount += delta;
-                    item.Amount -= delta;
-                    inventorySlot.DataChanged();
-                    Debug.Log("Items summ bigger than maxamount");
-                    Debug.Log(delta);
-                }
-
-                if ((inventorySlot.Amount + item.Amount) <= inventorySlot.CurrentItem.MaxAmount)
-                {
-                    inventorySlot.Amount += item.Amount;
-                    inventorySlot.DataChanged();
-                    Debug.Log("Item summ lesser than maxamiunt");
-                    return;
-                }
-            }
-        }
-
-        foreach (InventorySlot inventorySlot in InventorySlots)
-        {
-            if (inventorySlot.CurrentItem == _defaultItem)
-            {
-                inventorySlot.ChangeCurrentItem(item);
-                return;
-            }
-        }
+        if (Opened)
+            Close();
+        else
+            Open();
     }
 }

@@ -62,6 +62,24 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""InventoryOpenClose"",
+                    ""type"": ""Button"",
+                    ""id"": ""40cb19e7-300a-4598-baf8-ca0377f627b3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SplitItemByTwoParts"",
+                    ""type"": ""Button"",
+                    ""id"": ""0e8d0aba-66e1-447b-81e4-2a6230c7563c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -152,6 +170,28 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Pickup"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""90050b3e-56b8-4818-b54b-3347256d02d4"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""InventoryOpenClose"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ef14066a-ec95-4a2c-b5c9-21554ce240db"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SplitItemByTwoParts"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -170,6 +210,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Main_MoveLeftRight = m_Main.FindAction("MoveLeftRight", throwIfNotFound: true);
         m_Main_MoveForwardBackward = m_Main.FindAction("MoveForwardBackward", throwIfNotFound: true);
         m_Main_Pickup = m_Main.FindAction("Pickup", throwIfNotFound: true);
+        m_Main_InventoryOpenClose = m_Main.FindAction("InventoryOpenClose", throwIfNotFound: true);
+        m_Main_SplitItemByTwoParts = m_Main.FindAction("SplitItemByTwoParts", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -233,6 +275,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Main_MoveLeftRight;
     private readonly InputAction m_Main_MoveForwardBackward;
     private readonly InputAction m_Main_Pickup;
+    private readonly InputAction m_Main_InventoryOpenClose;
+    private readonly InputAction m_Main_SplitItemByTwoParts;
     public struct MainActions
     {
         private @PlayerControls m_Wrapper;
@@ -241,6 +285,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @MoveLeftRight => m_Wrapper.m_Main_MoveLeftRight;
         public InputAction @MoveForwardBackward => m_Wrapper.m_Main_MoveForwardBackward;
         public InputAction @Pickup => m_Wrapper.m_Main_Pickup;
+        public InputAction @InventoryOpenClose => m_Wrapper.m_Main_InventoryOpenClose;
+        public InputAction @SplitItemByTwoParts => m_Wrapper.m_Main_SplitItemByTwoParts;
         public InputActionMap Get() { return m_Wrapper.m_Main; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -262,6 +308,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Pickup.started -= m_Wrapper.m_MainActionsCallbackInterface.OnPickup;
                 @Pickup.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnPickup;
                 @Pickup.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnPickup;
+                @InventoryOpenClose.started -= m_Wrapper.m_MainActionsCallbackInterface.OnInventoryOpenClose;
+                @InventoryOpenClose.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnInventoryOpenClose;
+                @InventoryOpenClose.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnInventoryOpenClose;
+                @SplitItemByTwoParts.started -= m_Wrapper.m_MainActionsCallbackInterface.OnSplitItemByTwoParts;
+                @SplitItemByTwoParts.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnSplitItemByTwoParts;
+                @SplitItemByTwoParts.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnSplitItemByTwoParts;
             }
             m_Wrapper.m_MainActionsCallbackInterface = instance;
             if (instance != null)
@@ -278,6 +330,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Pickup.started += instance.OnPickup;
                 @Pickup.performed += instance.OnPickup;
                 @Pickup.canceled += instance.OnPickup;
+                @InventoryOpenClose.started += instance.OnInventoryOpenClose;
+                @InventoryOpenClose.performed += instance.OnInventoryOpenClose;
+                @InventoryOpenClose.canceled += instance.OnInventoryOpenClose;
+                @SplitItemByTwoParts.started += instance.OnSplitItemByTwoParts;
+                @SplitItemByTwoParts.performed += instance.OnSplitItemByTwoParts;
+                @SplitItemByTwoParts.canceled += instance.OnSplitItemByTwoParts;
             }
         }
     }
@@ -297,5 +355,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnMoveLeftRight(InputAction.CallbackContext context);
         void OnMoveForwardBackward(InputAction.CallbackContext context);
         void OnPickup(InputAction.CallbackContext context);
+        void OnInventoryOpenClose(InputAction.CallbackContext context);
+        void OnSplitItemByTwoParts(InputAction.CallbackContext context);
     }
 }

@@ -62,40 +62,42 @@ MonoBehaviour:
     sessionPlaybackState: 1
     m_terrainsFoldedOut: 0
     m_serializedExternalAction: 
+  - m_description: Clear World
+    m_operationType: 10
+    m_isActive: 1
+    m_affectedTerrainNames: []
+    m_operationDateTime: 02.03.2023 0:24:02
+    scriptableObjectAssetGUID: 
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: 'Creating World: 1 x 1 tiles, tile size: 2048'
+    m_operationType: 0
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20230302 - 002403
+    m_operationDateTime: 02.03.2023 0:24:04
+    scriptableObjectAssetGUID: afa474d8e9a7c6c45b4115e417a7d4f1
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
   m_terrainMinMaxCache:
   - guid: 0ae41eae6ad385c47a92fe4b66752dc7
     isWorldmap: 0
     recalculate: 0
     min: 0
     max: 115.81427
+  - guid: b081a7c0053371e4fa1c3a30ec091f7f
+    isWorldmap: 0
+    recalculate: 0
+    min: 0
+    max: 98.439
   - guid: Worldmap
     isWorldmap: 1
     recalculate: 0
     min: 0
-    max: 61.119545
-  m_bakedMaskCacheEntries:
-  - fileName: Terrain_0_0-20230225 - 190502_LayerGameObject_7168_12
-    assetPath: Assets/Procedural Worlds/Gaia/TerrainCollisionData/Terrain_0_0-20230225
-      - 190502/Terrain_0_0-20230225 - 190502_LayerGameObject_7168_12
-    fullPath: D:/adobe/unity projects/MarsSurvival/Assets/Procedural Worlds/Gaia/TerrainCollisionData/Terrain_0_0-20230225
-      - 190502/Terrain_0_0-20230225 - 190502_LayerGameObject_7168_12
-    texture: {fileID: 0}
-  - fileName: Terrain_0_0-20230225 - 190502_LayerTree_7168_5
-    assetPath: Assets/Procedural Worlds/Gaia/TerrainCollisionData/Terrain_0_0-20230225
-      - 190502/Terrain_0_0-20230225 - 190502_LayerTree_7168_5
-    fullPath: D:/adobe/unity projects/MarsSurvival/Assets/Procedural Worlds/Gaia/TerrainCollisionData/Terrain_0_0-20230225
-      - 190502/Terrain_0_0-20230225 - 190502_LayerTree_7168_5
-    texture: {fileID: 0}
-  - fileName: Terrain_0_0-20230225 - 190502_LayerGameObject_7168_5
-    assetPath: Assets/Procedural Worlds/Gaia/TerrainCollisionData/Terrain_0_0-20230225
-      - 190502/Terrain_0_0-20230225 - 190502_LayerGameObject_7168_5
-    fullPath: D:/adobe/unity projects/MarsSurvival/Assets/Procedural Worlds/Gaia/TerrainCollisionData/Terrain_0_0-20230225
-      - 190502/Terrain_0_0-20230225 - 190502_LayerGameObject_7168_5
-    texture: {fileID: 0}
-  - fileName: Terrain_0_0-20230225 - 190502_LayerGameObject_7168_0,5
-    assetPath: Assets/Procedural Worlds/Gaia/TerrainCollisionData/Terrain_0_0-20230225
-      - 190502/Terrain_0_0-20230225 - 190502_LayerGameObject_7168_0,5
-    fullPath: D:/adobe/unity projects/MarsSurvival/Assets/Procedural Worlds/Gaia/TerrainCollisionData/Terrain_0_0-20230225
-      - 190502/Terrain_0_0-20230225 - 190502_LayerGameObject_7168_0,5
-    texture: {fileID: 0}
+    max: 54.156563
+  m_bakedMaskCacheEntries: []
   m_worldBiomeMaskSettings: {fileID: 0}
