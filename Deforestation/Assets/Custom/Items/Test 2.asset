@@ -17,3 +17,5 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 42244310212084b45a48395afdfde57f, type: 3}
   MaxAmount: 6
   CanSplited: 1
+  CanActivated: 0
+  Prefab: {fileID: 1721145190436056104, guid: 500c1de00d9854e4a931f3029015ab6b, type: 3}

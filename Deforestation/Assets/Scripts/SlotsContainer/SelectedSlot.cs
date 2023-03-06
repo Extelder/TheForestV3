@@ -12,6 +12,7 @@ public class SelectedSlot : MonoBehaviour, IPointerDownHandler
     [SerializeField] private ContainerSlot _slot;
     [SerializeField] private Button _separateSlotButton;
     [SerializeField] private Button _splitSlotButton;
+    [SerializeField] private Button _dropSlotButton;
 
     public event Action Selected;
     public event Action DeSelected;
@@ -47,6 +48,11 @@ public class SelectedSlot : MonoBehaviour, IPointerDownHandler
     {
         Selected.Invoke();
         PlayerInventory.SelectedSlot = this;
+        _dropSlotButton.onClick.AddListener(() =>
+        {
+            PlayerDrop.Instance.Drop(_slot.CurrentItem, _slot.Amount);
+            _slot.NullifyData();
+        });
 
         if (_slot.CurrentItem.CanSplited && _slot.Amount - 1 > 0)
         {
@@ -64,6 +70,7 @@ public class SelectedSlot : MonoBehaviour, IPointerDownHandler
         PlayerInventory.SelectedSlot = null;
         _separateSlotButton.onClick.RemoveAllListeners();
         _splitSlotButton.onClick.RemoveAllListeners();
+        _dropSlotButton.onClick.RemoveAllListeners();
 
         DeSelected?.Invoke();
     }

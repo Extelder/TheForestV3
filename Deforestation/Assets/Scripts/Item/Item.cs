@@ -10,4 +10,6 @@ public class Item : ScriptableObject
     public Sprite Icon;
     public int MaxAmount;
     public bool CanSplited = true;
+    public bool CanActivated;
+    public GameObject Prefab;
 }

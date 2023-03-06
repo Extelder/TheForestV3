@@ -8,16 +8,9 @@ public class PickupItem : MonoBehaviour, IPickuptable
     public Item CurrentItem;
     [field: SerializeField] public int Amount { get; set; }
 
-    private PlayerInventory _playerInventory;
-
-    [Inject]
-    private void Init(PlayerInventory playerInventory)
-    {
-        _playerInventory = playerInventory;
-    }
 
     public void Pickup()
     {
-        _playerInventory.AddItem(this);
+        PlayerInventory.Instance.AddItem(this);
     }
 }

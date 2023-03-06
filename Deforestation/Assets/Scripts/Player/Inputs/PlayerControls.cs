@@ -80,6 +80,69 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ActivateFirstItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""3765facd-0929-4d1f-82a2-2aa09742235c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ActivateSecondItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""abeffc83-0418-46f4-9d38-506a4c2d45db"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ActivateThirdItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""61dd8844-fa44-4843-a047-3ff663d7ac1d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ActivateFourthItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""426223fc-05ab-4dd0-918d-9eab8dc3a354"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ActivateFifthItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""8077865a-4284-40f3-a9ac-2b81eeb22219"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ActivateSixthItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""ca595074-ad0a-4293-a560-d61dbc3a60dd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ActivateSeventhItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""75a89365-c417-4939-a042-0d2a01808781"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -192,6 +255,83 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""SplitItemByTwoParts"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""30a0c8a9-07ed-4696-8b69-2ece2b60df95"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActivateFirstItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6df913bf-c3ce-44a8-a2d6-646215b23291"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActivateSecondItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c9757b61-d2af-47a8-8817-21fb0a6c5a41"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActivateThirdItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a5c27353-659d-4f08-858b-168a1e0ba258"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActivateFourthItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3cbbcd0d-045f-45a1-921a-92ded11d2fba"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActivateFifthItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""159bbee1-5563-47d3-89e9-1aa4d53ca6c4"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActivateSixthItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ea3d1002-40f5-4dad-b634-6359bd2d7656"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActivateSeventhItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -212,6 +352,13 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Main_Pickup = m_Main.FindAction("Pickup", throwIfNotFound: true);
         m_Main_InventoryOpenClose = m_Main.FindAction("InventoryOpenClose", throwIfNotFound: true);
         m_Main_SplitItemByTwoParts = m_Main.FindAction("SplitItemByTwoParts", throwIfNotFound: true);
+        m_Main_ActivateFirstItem = m_Main.FindAction("ActivateFirstItem", throwIfNotFound: true);
+        m_Main_ActivateSecondItem = m_Main.FindAction("ActivateSecondItem", throwIfNotFound: true);
+        m_Main_ActivateThirdItem = m_Main.FindAction("ActivateThirdItem", throwIfNotFound: true);
+        m_Main_ActivateFourthItem = m_Main.FindAction("ActivateFourthItem", throwIfNotFound: true);
+        m_Main_ActivateFifthItem = m_Main.FindAction("ActivateFifthItem", throwIfNotFound: true);
+        m_Main_ActivateSixthItem = m_Main.FindAction("ActivateSixthItem", throwIfNotFound: true);
+        m_Main_ActivateSeventhItem = m_Main.FindAction("ActivateSeventhItem", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -277,6 +424,13 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Main_Pickup;
     private readonly InputAction m_Main_InventoryOpenClose;
     private readonly InputAction m_Main_SplitItemByTwoParts;
+    private readonly InputAction m_Main_ActivateFirstItem;
+    private readonly InputAction m_Main_ActivateSecondItem;
+    private readonly InputAction m_Main_ActivateThirdItem;
+    private readonly InputAction m_Main_ActivateFourthItem;
+    private readonly InputAction m_Main_ActivateFifthItem;
+    private readonly InputAction m_Main_ActivateSixthItem;
+    private readonly InputAction m_Main_ActivateSeventhItem;
     public struct MainActions
     {
         private @PlayerControls m_Wrapper;
@@ -287,6 +441,13 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Pickup => m_Wrapper.m_Main_Pickup;
         public InputAction @InventoryOpenClose => m_Wrapper.m_Main_InventoryOpenClose;
         public InputAction @SplitItemByTwoParts => m_Wrapper.m_Main_SplitItemByTwoParts;
+        public InputAction @ActivateFirstItem => m_Wrapper.m_Main_ActivateFirstItem;
+        public InputAction @ActivateSecondItem => m_Wrapper.m_Main_ActivateSecondItem;
+        public InputAction @ActivateThirdItem => m_Wrapper.m_Main_ActivateThirdItem;
+        public InputAction @ActivateFourthItem => m_Wrapper.m_Main_ActivateFourthItem;
+        public InputAction @ActivateFifthItem => m_Wrapper.m_Main_ActivateFifthItem;
+        public InputAction @ActivateSixthItem => m_Wrapper.m_Main_ActivateSixthItem;
+        public InputAction @ActivateSeventhItem => m_Wrapper.m_Main_ActivateSeventhItem;
         public InputActionMap Get() { return m_Wrapper.m_Main; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -314,6 +475,27 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @SplitItemByTwoParts.started -= m_Wrapper.m_MainActionsCallbackInterface.OnSplitItemByTwoParts;
                 @SplitItemByTwoParts.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnSplitItemByTwoParts;
                 @SplitItemByTwoParts.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnSplitItemByTwoParts;
+                @ActivateFirstItem.started -= m_Wrapper.m_MainActionsCallbackInterface.OnActivateFirstItem;
+                @ActivateFirstItem.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnActivateFirstItem;
+                @ActivateFirstItem.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnActivateFirstItem;
+                @ActivateSecondItem.started -= m_Wrapper.m_MainActionsCallbackInterface.OnActivateSecondItem;
+                @ActivateSecondItem.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnActivateSecondItem;
+                @ActivateSecondItem.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnActivateSecondItem;
+                @ActivateThirdItem.started -= m_Wrapper.m_MainActionsCallbackInterface.OnActivateThirdItem;
+                @ActivateThirdItem.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnActivateThirdItem;
+                @ActivateThirdItem.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnActivateThirdItem;
+                @ActivateFourthItem.started -= m_Wrapper.m_MainActionsCallbackInterface.OnActivateFourthItem;
+                @ActivateFourthItem.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnActivateFourthItem;
+                @ActivateFourthItem.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnActivateFourthItem;
+                @ActivateFifthItem.started -= m_Wrapper.m_MainActionsCallbackInterface.OnActivateFifthItem;
+                @ActivateFifthItem.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnActivateFifthItem;
+                @ActivateFifthItem.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnActivateFifthItem;
+                @ActivateSixthItem.started -= m_Wrapper.m_MainActionsCallbackInterface.OnActivateSixthItem;
+                @ActivateSixthItem.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnActivateSixthItem;
+                @ActivateSixthItem.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnActivateSixthItem;
+                @ActivateSeventhItem.started -= m_Wrapper.m_MainActionsCallbackInterface.OnActivateSeventhItem;
+                @ActivateSeventhItem.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnActivateSeventhItem;
+                @ActivateSeventhItem.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnActivateSeventhItem;
             }
             m_Wrapper.m_MainActionsCallbackInterface = instance;
             if (instance != null)
@@ -336,6 +518,27 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @SplitItemByTwoParts.started += instance.OnSplitItemByTwoParts;
                 @SplitItemByTwoParts.performed += instance.OnSplitItemByTwoParts;
                 @SplitItemByTwoParts.canceled += instance.OnSplitItemByTwoParts;
+                @ActivateFirstItem.started += instance.OnActivateFirstItem;
+                @ActivateFirstItem.performed += instance.OnActivateFirstItem;
+                @ActivateFirstItem.canceled += instance.OnActivateFirstItem;
+                @ActivateSecondItem.started += instance.OnActivateSecondItem;
+                @ActivateSecondItem.performed += instance.OnActivateSecondItem;
+                @ActivateSecondItem.canceled += instance.OnActivateSecondItem;
+                @ActivateThirdItem.started += instance.OnActivateThirdItem;
+                @ActivateThirdItem.performed += instance.OnActivateThirdItem;
+                @ActivateThirdItem.canceled += instance.OnActivateThirdItem;
+                @ActivateFourthItem.started += instance.OnActivateFourthItem;
+                @ActivateFourthItem.performed += instance.OnActivateFourthItem;
+                @ActivateFourthItem.canceled += instance.OnActivateFourthItem;
+                @ActivateFifthItem.started += instance.OnActivateFifthItem;
+                @ActivateFifthItem.performed += instance.OnActivateFifthItem;
+                @ActivateFifthItem.canceled += instance.OnActivateFifthItem;
+                @ActivateSixthItem.started += instance.OnActivateSixthItem;
+                @ActivateSixthItem.performed += instance.OnActivateSixthItem;
+                @ActivateSixthItem.canceled += instance.OnActivateSixthItem;
+                @ActivateSeventhItem.started += instance.OnActivateSeventhItem;
+                @ActivateSeventhItem.performed += instance.OnActivateSeventhItem;
+                @ActivateSeventhItem.canceled += instance.OnActivateSeventhItem;
             }
         }
     }
@@ -357,5 +560,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnPickup(InputAction.CallbackContext context);
         void OnInventoryOpenClose(InputAction.CallbackContext context);
         void OnSplitItemByTwoParts(InputAction.CallbackContext context);
+        void OnActivateFirstItem(InputAction.CallbackContext context);
+        void OnActivateSecondItem(InputAction.CallbackContext context);
+        void OnActivateThirdItem(InputAction.CallbackContext context);
+        void OnActivateFourthItem(InputAction.CallbackContext context);
+        void OnActivateFifthItem(InputAction.CallbackContext context);
+        void OnActivateSixthItem(InputAction.CallbackContext context);
+        void OnActivateSeventhItem(InputAction.CallbackContext context);
     }
 }

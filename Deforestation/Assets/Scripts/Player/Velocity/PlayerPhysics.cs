@@ -7,6 +7,8 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerPhysics : MonoBehaviour
 {
+    [SerializeField] private PlayerGrounded _grounded;
+
     private CharacterController _characterController;
 
     public Vector3 Velocity;

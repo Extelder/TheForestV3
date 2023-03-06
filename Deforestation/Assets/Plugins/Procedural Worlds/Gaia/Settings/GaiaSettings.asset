@@ -46,17 +46,17 @@ MonoBehaviour:
   m_terrainUnloadMemoryTreshold: 4294967296
   m_worldmapLayer: {fileID: 8574412962073106934, guid: 957ef5b80c80fde429be14ca5eeed1ae,
     type: 2}
-  m_enableAmbientAudio: 1
-  m_enablePostProcessing: 1
-  m_enableLocationManager: 1
+  m_enableAmbientAudio: 0
+  m_enablePostProcessing: 0
+  m_enableLocationManager: 0
   m_enableLoadingScreen: 1
   m_quickBakeLighting: 0
   m_currentPostFX: 0
   m_currentWater: 0
-  m_enableUnderwaterEffects: 1
-  m_createWind: 1
+  m_enableUnderwaterEffects: 0
+  m_createWind: 0
   m_windType: 0
-  m_createScreenShotter: 1
+  m_createScreenShotter: 0
   m_focusPlayerOnSetup: 0
   m_FPFDefaultThreshold: 5000
   m_XRControllerPackageName: GaiaXRController.unitypackage
@@ -312,17 +312,17 @@ MonoBehaviour:
     m_spawnerSettings: {fileID: 11400000, guid: 217233c9205c20e489541b22ca7b7868,
       type: 2}
     m_isActiveInStamper: 0
-    m_isActiveInBiome: 1
+    m_isActiveInBiome: 0
   - m_autoAssignPrototypes: 0
     m_spawnerSettings: {fileID: 11400000, guid: 1c13e8da020868e45a1e6704e198303b,
       type: 2}
     m_isActiveInStamper: 0
-    m_isActiveInBiome: 1
+    m_isActiveInBiome: 0
   - m_autoAssignPrototypes: 0
     m_spawnerSettings: {fileID: 11400000, guid: 19e5d8869512147439106806e7c45156,
       type: 2}
     m_isActiveInStamper: 0
-    m_isActiveInBiome: 1
+    m_isActiveInBiome: 0
   - m_autoAssignPrototypes: 0
     m_spawnerSettings: {fileID: 11400000, guid: 76f07dd99e8eed643bc6dc110ac3b34f,
       type: 2}

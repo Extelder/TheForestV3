@@ -14,6 +14,7 @@ public class SelectedSlotUI : MonoBehaviour
     [SerializeField] private ContainerSlot containerSlot;
     [SerializeField] private Button _separateSlotButton;
     [SerializeField] private Button _splitSlotButton;
+    [SerializeField] private Button _dropSlotButton;
     [SerializeField] private TextMeshProUGUI _currentSeparateValueTextComponent;
     [SerializeField] private int _currentSeparateSliderMaxValue;
 
@@ -47,6 +48,7 @@ public class SelectedSlotUI : MonoBehaviour
 
             _separateSlotButton.gameObject.SetActive(false);
             _splitSlotButton.gameObject.SetActive(false);
+            _dropSlotButton.gameObject.SetActive(false);
 
             _slider.gameObject.SetActive(false);
             return;
@@ -56,6 +58,7 @@ public class SelectedSlotUI : MonoBehaviour
 
         _separateSlotButton.gameObject.SetActive(true);
         _splitSlotButton.gameObject.SetActive(true);
+        _dropSlotButton.gameObject.SetActive(true);
 
         _slider.gameObject.SetActive(true);
 
@@ -66,6 +69,7 @@ public class SelectedSlotUI : MonoBehaviour
     public void OnSelected()
     {
         _selectedImage.gameObject.SetActive(true);
+        _dropSlotButton.gameObject.SetActive(true);
 
         OnItemValuesChanged();
         if (containerSlot.CurrentItem.CanSplited && containerSlot.Amount - 1 > 0)
@@ -88,6 +92,7 @@ public class SelectedSlotUI : MonoBehaviour
     public void OnDeSelected()
     {
         _selectedImage.gameObject.SetActive(false);
+        _dropSlotButton.gameObject.SetActive(false);
 
         OnItemValuesChanged();
 

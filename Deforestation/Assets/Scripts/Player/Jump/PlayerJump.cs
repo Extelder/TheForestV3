@@ -33,11 +33,18 @@ public class PlayerJump : MonoBehaviour
         _controls.Disable();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if (!_physics.IsGrounded())
+        if (_physics.IsGrounded() && _physics.Velocity.y < 0.0f)
         {
-            _physics.Velocity.y += _gravity * Time.deltaTime;
+            _physics.Velocity.y = -0.05f;
+        }
+        else
+        {
+            if (_physics.Velocity.y > _gravity)
+                _physics.Velocity.y += _gravity * Time.deltaTime;
+            else
+                _physics.Velocity.y = _gravity;
         }
     }
 
@@ -47,6 +54,6 @@ public class PlayerJump : MonoBehaviour
             return;
 
         _physics.Velocity.y = 0;
-        _physics.Velocity.y += Mathf.Sqrt(_jumpHeight * -3.0f * _gravity);
+        _physics.Velocity.y += _jumpHeight;
     }
 }

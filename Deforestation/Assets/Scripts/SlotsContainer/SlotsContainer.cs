@@ -89,7 +89,7 @@ public class SlotsContainer : MonoBehaviour
 
         if (item.Amount > 0)
         {
-            Drop();
+            Drop(item.CurrentItem, item.Amount);
         }
     }
 
@@ -144,7 +144,7 @@ public class SlotsContainer : MonoBehaviour
 
         if (amount >= 0)
         {
-            Drop();
+            Drop(item, amount);
         }
     }
 
@@ -176,7 +176,7 @@ public class SlotsContainer : MonoBehaviour
 
         if (amount >= 0)
         {
-            Drop();
+            Drop(item, amount);
         }
     }
 
@@ -193,7 +193,7 @@ public class SlotsContainer : MonoBehaviour
         return false;
     }
 
-    private void Drop()
+    private void Drop(Item item, int amount)
     {
     }
 }
